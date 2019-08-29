@@ -1,0 +1,89 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mediabiblioteket;
+
+import static com.oracle.nio.BufferSecrets.instance;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author NKPGV
+ */
+public class BorrowerTest {
+    
+    public BorrowerTest() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of setName method, of class Borrower.
+     */
+    @Test
+    public void testSetName() {
+        String setName = "Mack";
+        Borrower name = new Borrower("Mack","","");
+        String expResult = setName;
+        String Result = name.getName();
+        assertEquals(expResult, Result);
+    }
+     @Test
+        public void testGetName() {
+        String testdata = "Mack";
+        Borrower name = new Borrower(testdata, "", "");
+        assertEquals(name.getName(), testdata);
+         }
+     @Test
+        public void testSetSsn() {
+        String setSsn = "123";
+        Borrower Ssn = new Borrower("","123","");
+        String expResult = setSsn;
+        String Result = Ssn.getSsn();
+        assertEquals(expResult, Result);
+        }
+     @Test
+        public void testGetSsn() {
+        String testdata = "1234";
+        Borrower Ssn = new Borrower(" ", testdata," ");
+        assertEquals(Ssn.getSsn(), testdata);
+        }
+     @Test
+        public void testSetPhoneNumber() {
+        String setPhoneNumber = "0723411888";
+        Borrower phoneNumber = new Borrower("","","0723411888");
+        String expResult = setPhoneNumber;
+        String Result = phoneNumber.getphoneNumber();
+        assertEquals(expResult, Result);
+        }
+     @Test
+        public void testGetPhoneNumber(){
+        String testdata = "0723422888";
+        Borrower phoneNumber = new Borrower (" "," ",testdata);
+        assertEquals(phoneNumber.getphoneNumber(), testdata);
+
+        
+        }
+
+}
