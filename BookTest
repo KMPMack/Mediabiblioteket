@@ -1,0 +1,79 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mediabiblioteket;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author NKPGV
+ */
+public class BookTest {
+    
+    public BookTest() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of getAuthor method, of class Book.
+     */
+    @Test
+    public void testGetAuthor() {
+        String testdata = "Mack";
+        Book Author = new Book("","","",1 ,testdata);
+        assertEquals(Author.getAuthor(), testdata);      
+    }
+    @Test
+    public void testSetAuthor() {
+        String setAuthor = "Mack";
+        Book Author = new Book("","","",1,"Mack") ;
+        String expResult = setAuthor;
+        String result = Author.getAuthor();
+        assertEquals(expResult,result);
+    }
+    @Test
+    public void testToString() {
+        Book toString = new Book("Book","Superman","1337",2010,"Kalle");
+        String result = toString.toString();
+        String expResult ="Book - Free - Superman - 2010 - Kalle";
+        assertEquals(result,expResult);
+        
+        
+        
+    
+    }
+   
+    @Test
+    public void testListInfo() {
+        Book listInfo = new Book("Book","Superman","1337",2010,"Kalle"); 
+        String result = listInfo.listInfo();
+        System.out.println(result);
+        System.out.println(listInfo.listInfo());
+       
+       
+    }
+    
+}
