@@ -70,8 +70,28 @@ public class BookTest {
     public void testListInfo() {
         Book listInfo = new Book("Book","Superman","1337",2010,"Kalle"); 
         String result = listInfo.listInfo();
-        System.out.println(result);
-        System.out.println(listInfo.listInfo());
+        String exp = "";
+        String expResult = "Title: Superman \n"
+                + "Year: 2010\n"
+                + "Author: Kalle\n"
+                + "Type: Book\n"
+                + "Free\n"
+                + "ID: 1337\n";
+        
+//        String test = result.replaceAll("\n", "#");
+//        
+//        System.out.println(test);
+//        
+//        if(expResult.matches(result)){
+//            System.out.println("Match");
+//        }else{
+//            System.out.println("No match");
+//        }
+        
+//        System.out.println(result);
+//        System.out.println(expResult);
+        assertEquals(result, expResult);
+
        
        
     }
