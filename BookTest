@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author NKPGV
  */
 public class BookTest {
-    
+
     public BookTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -43,32 +43,29 @@ public class BookTest {
     @Test
     public void testGetAuthor() {
         String testdata = "Mack";
-        Book Author = new Book("","","",1 ,testdata);
-        assertEquals(Author.getAuthor(), testdata);      
+        Book Author = new Book("", "", "", 1, testdata);
+        assertEquals(Author.getAuthor(), testdata);
     }
+
     @Test
     public void testSetAuthor() {
-        String setAuthor = "Mack";
-        Book Author = new Book("","","",1,"Mack") ;
-        String expResult = setAuthor;
-        String result = Author.getAuthor();
-        assertEquals(expResult,result);
+        String Author = "Mack";
+        Book test1 = new Book("", "", "", 1, "");
+        test1.setAuthor(Author);
+        String result = test1.getAuthor();
+        String expResult = "Mack";
+        assertEquals(expResult, result);
     }
+
     @Test
     public void testToString() {
-        Book toString = new Book("Book","Superman","1337",2010,"Kalle");
-        String result = toString.toString();
-        String expResult ="Book - Free - Superman - 2010 - Kalle";
-        assertEquals(result,expResult);
-        
-        
-        
-    
+
+
     }
-   
+
     @Test
     public void testListInfo() {
-        Book listInfo = new Book("Book","Superman","1337",2010,"Kalle"); 
+        Book listInfo = new Book("Book", "Superman", "1337", 2010, "Kalle");
         String result = listInfo.listInfo();
         String exp = "";
         String expResult = "Title: Superman \n"
@@ -77,7 +74,7 @@ public class BookTest {
                 + "Type: Book\n"
                 + "Free\n"
                 + "ID: 1337\n";
-        
+
 //        String test = result.replaceAll("\n", "#");
 //        
 //        System.out.println(test);
@@ -87,13 +84,10 @@ public class BookTest {
 //        }else{
 //            System.out.println("No match");
 //        }
-        
 //        System.out.println(result);
 //        System.out.println(expResult);
         assertEquals(result, expResult);
 
-       
-       
     }
-    
+
 }
