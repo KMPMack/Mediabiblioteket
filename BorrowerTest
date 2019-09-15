@@ -18,22 +18,22 @@ import static org.junit.Assert.*;
  * @author NKPGV
  */
 public class BorrowerTest {
-    
+
     public BorrowerTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -42,48 +42,58 @@ public class BorrowerTest {
      * Test of setName method, of class Borrower.
      */
     @Test
+    public void testGetName() {
+        String testdata = "Mack";
+        Borrower name = new Borrower("Mack", "", "");
+        assertEquals(name.getName(), testdata);
+    }
+
+    @Test
     public void testSetName() {
-        String setName = "Mack";
-        Borrower name = new Borrower("Mack","","");
-        String expResult = setName;
-        String Result = name.getName();
+        String name = "Mack";
+        Borrower test1 = new Borrower("","","");
+       
+        test1.setName(name);
+        String Result = test1.getName();
+        String expResult = "Mack";
+        assertEquals(expResult, Result);
+      
+    }
+
+    @Test
+    public void testGetSsn() {
+        String testdata = "123";
+        Borrower Ssn = new Borrower(" ", testdata, " ");
+        assertEquals(Ssn.getSsn(), testdata);
+    }
+
+    @Test
+    public void testSetSsn() {
+        String Ssn = "123";
+        Borrower test2 = new Borrower("", "", "");
+        test2.setSsn(Ssn);
+        String Result = test2.getSsn();
+        String expResult = "123";
         assertEquals(expResult, Result);
     }
-     @Test
-        public void testGetName() {
-        String testdata = "Mack";
-        Borrower name = new Borrower(testdata, "", "");
-        assertEquals(name.getName(), testdata);
-         }
-     @Test
-        public void testSetSsn() {
-        String setSsn = "123";
-        Borrower Ssn = new Borrower("","123","");
-        String expResult = setSsn;
-        String Result = Ssn.getSsn();
-        assertEquals(expResult, Result);
-        }
-     @Test
-        public void testGetSsn() {
-        String testdata = "1234";
-        Borrower Ssn = new Borrower(" ", testdata," ");
-        assertEquals(Ssn.getSsn(), testdata);
-        }
-     @Test
-        public void testSetPhoneNumber() {
-        String setPhoneNumber = "0723411888";
-        Borrower phoneNumber = new Borrower("","","0723411888");
-        String expResult = setPhoneNumber;
-        String Result = phoneNumber.getphoneNumber();
-        assertEquals(expResult, Result);
-        }
-     @Test
-        public void testGetPhoneNumber(){
-        String testdata = "0723422888";
-        Borrower phoneNumber = new Borrower (" "," ",testdata);
+
+    @Test
+    public void testGetPhoneNumber() {
+        String testdata = "0723411888";
+        Borrower phoneNumber = new Borrower(" ", " ", testdata);
         assertEquals(phoneNumber.getphoneNumber(), testdata);
 
-        
-        }
+    }
+
+    @Test
+    public void testSetPhoneNumber() {
+        String PhoneNumber = "0723411888";
+        Borrower test3 = new Borrower("", "", "");
+        test3.setphoneNumber(PhoneNumber);
+        String Result = test3.getphoneNumber();
+        String expResult ="0723411888";
+        assertEquals(expResult, Result);
+     
+    }
 
 }
